@@ -49,7 +49,52 @@
 
         <label for="idade"> Idade </label>
         <input type="number" min="0" max="100" step="1" name="idade" id="idade">
-    </form>'55555'
+
+        <label for="sexo">Sexo</label>
+            <input type="radio" name="sexo" value="1" checked> Masculino
+            <input type="radio" name="sexo" value="2"> Feminino
+
+            <input type="checkbox" name="veiculo1" value="bike"> Eu tenho uma bike
+            <input type="checkbox" name="veiculo1" value="carro"> Eu tenho um carro
+
+            <label for="curso">Curso</label>
+            <select name="curso">
+                <option value="1">Ciência da Computação</option>
+                <option value="2">Direito</option>
+                <option value="3">Engenharia Elétrica</option>
+                <option value="4">Medicina</option>
+            </select>
+        </form>
+
+        Mensagem: <textarea name="message" rows="10" cols="30" id=""></textarea>
+        Data de nascimento: <input type="date" name="data_nascimento" min="2025-01-02">
+
+        Auto complete: <input list="cheeses">
+        <datalist id="cheeses">
+            <option>Camembert</option>
+            <option>Cheddar</option>
+            <option>Chèvre</option>
+            <option>Cotija</option>
+            <option>Emmental</option>
+            <option>Feta</option>
+            <option>Gouda</option>
+            <option>Manchego</option>
+            <option>Monterey Jack</option>
+            <option>Mozzarella</option>
+            <option>Parmigiano-Reggiano</option>
+        </datalist>
+
+        <input type="hidden" name="country" value="Brasil">
+
+        <input type="reset" value="Limpar">
+        <input type="submit" value="Enviar">
+
+        <button type="button" onclick="alert('Hello world!')">Botão 1</button>
+        <button type="button" onclick="soma(5, 10);">
+            Botão 02
+        </button>
+
+    </form>
 
     </body>
 </html>
