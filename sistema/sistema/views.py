@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 class Login(View):
     """
-    class Based View para autenticação de usuário
+    Class Based View para autenticação de usuário.
     """
 
     def get(self, request):
