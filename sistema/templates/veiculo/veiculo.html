@@ -1,0 +1,106 @@
+{% extends 'base.html' %} 
+{% block title %}Lista de Veículos
+{% endblock %} 
+{%block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h2 class="text-dark mb-0">
+    <i class="bi bi-car-front me-2 text-primary"></i>
+    Meus Veículos
+  </h2>
+  <a href="#" class="btn btn-primary px-4 py-2 rounded">
+    <i class="bi bi-plus-lg me-2"></i>Novo Veículo
+  </a>
+</div>
+
+<!-- Formulário de Pesquisa -->
+<div class="card mb-4">
+  <div class="card-body">
+    <form class="row g-3">
+      <div class="col-md-10">
+        <div class="input-group">
+          <span class="input-group-text">
+            <i class="bi bi-search"></i>
+          </span>
+          <input
+            type="search"
+            class="form-control"
+            name="q"
+            placeholder="Pesquisar por marca, modelo, placa..."
+          />
+        </div>
+      </div>
+      <div class="col-md-2">
+        <button class="btn btn-outline-primary w-100" type="submit">
+          Pesquisar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Cards de Veículos -->
+<div class="row">
+  {% for veiculo in veiculos %}
+  <div class="col-md-6 col-lg-4 mb-4">
+    <div class="card h-100">
+      <!-- Área da imagem -->
+      <div
+        class="bg-light p-4 text-center"
+        style="
+          height: 180px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        "
+      >
+        <i class="bi bi-car-front text-secondary" style="font-size: 4rem"></i>
+      </div>
+
+      <div class="card-body">
+        <h5 class="card-title">
+          {{ veiculo.get_marca_display }} {{ veiculo.modelo }}
+        </h5>
+
+        <div class="row g-2 small text-muted">
+          <div class="col-6"><strong>Ano:</strong> {{ veiculo.ano }}</div>
+          <div class="col-6">
+            <strong>Cor:</strong> {{ veiculo.get_cor_display }}
+          </div>
+          <div class="col-12">
+            <strong>Combustível:</strong> {{ veiculo.get_combustivel_display }}
+          </div>
+        </div>
+      </div>
+
+      <div class="card-footer bg-white">
+        <div class="d-grid gap-2 d-md-flex">
+          <a href="#" class="btn btn-sm btn-outline-primary flex-md-fill">
+            <i class="bi bi-pencil me-1"></i> Editar
+          </a>
+          <a href="#" class="btn btn-sm btn-outline-danger flex-md-fill">
+            <i class="bi bi-trash me-1"></i> Excluir
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% empty %}
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body text-center py-5">
+        <i class="bi bi-car-front text-muted mb-3" style="font-size: 5rem"></i>
+        <h4 class="text-muted">Nenhum veículo encontrado</h4>
+        <p class="text-muted">
+          Comece adicionando seu primeiro veículo ao sistema.
+        </p>
+        <a href="#" class="btn btn-primary mt-3">
+          <i class="bi bi-plus-lg me-2"></i>Cadastrar Veículo
+        </a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-(b1yr)a59rs#d!^sehej@gmltnan3vcmv5%i-cd-o32!eohq90
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+]
 
 
 # Application definition
@@ -77,7 +78,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': '127.0.0.1',
-        'PORT': '5433',
+        'PORT': '5432',
     }
 }
 
@@ -124,3 +125,5 @@ STATICFILES_DIRS = [BASE_DIR / 'sistema/static']
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = ['https://localhost:8000','https://localhost:8001']
